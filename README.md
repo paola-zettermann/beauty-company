@@ -1,0 +1,2 @@
+# Beauty Company
+Projeto integrador desenvolvido durante o último ano do curso técnico em informática no IFRS Campus Restinga. Trata-se de um protótipo para uma empresa de cosméticos fictícia que integra as tecnologias EJS, Javascript, CSS e MySQL. O site conta com página para venda de produtos, página para cadastro de usuário, blog com informações sobre cuidados com a pele, corpo e cabelo, e quando se tratar do administrador do site, este tem acesso aos usuários cadastrados, aos pedidos realizados, entre outras funções.
