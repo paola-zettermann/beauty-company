@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Trabalhe Conosco</title>
+</head>
+<body>
+   
+    <%- include('../menu.ejs'); %>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section>
+        <p class="subtitulo4">Olá, bem-vindo! Faça seu pedido:</p>
+        <br>
+        <hr>
+        <br>
+        <form class="search-container">
+            <input type="text" id="search-bar" placeholder="Filtrar"/>
+            <br>
+            <br>
+            <center><button class="button1">Filtrar</button></center>
+        </form>
+    </section>
+
+    <br>
+    <br>
+
+    <form action="/processarpedido" method="post">
+
+    <br>
+    <hr>
+
+    <section>   
+        <div class="tabela"> 
+        <table>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Nome do Produto</th>    <!-- aparecer na lista dos pedidos o produto -->
+                    <th>Valor do Produto</th>
+                    <th>Qtd do Produto</th>
+                    <th>Valor do Frete</th>
+                    <th>Valor Total</th>
+                </tr>
+                    <% console.log(pedido) %>
+                    <% pedido.forEach((p, index) => { %> <!--   teste  --> 
+                <tr>
+                    <td><%= p.id_pedido %></td>
+                    <td><%= p.nome_produto %></td>  
+                    <td><%= p.valor_produto %></td>  
+                    <td><%= p.qtd %></td> <!--  a tabela pedido_has_produto no sql que tem qtd, pq qtd fica em pedido? e como tirar a qtd do produto (selecionada na lista_produto) pra colocar no pedido????? omg vo me matar-->
+                    <td> R$15,00</td>
+                    <td><%= p.valor_pedido %></td> <!-- o valor_pedido seria o valor do produto x a qtd (sem o frete)--> 
+                </tr> <!--  teste  --> 
+                <% }); %> 
+            </div>
+        </table>
+    </section>
+    
+
+</form>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <%- include('../rodape.ejs'); %>
+    
+</body>
+</html>
